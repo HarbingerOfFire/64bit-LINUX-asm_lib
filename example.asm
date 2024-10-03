@@ -9,14 +9,19 @@ section .text
     global _start
 
 _start:
-    mov rax, filename
-    call open
-
     mov rax, 1024
     call malloc ; address in RAX as output of malloc
 
-    mov rdi, 1024
+    mov rdi, rax
+
+    mov rax, filename
+    call open
+
+    mov rsi, 1024
     call read
+
+    mov rax, rdi
+    mov rdi, rsi
     call printf
 
     call success
