@@ -1,0 +1,6 @@
+Include guard example:
+
+%ifndef [NAME_ASM]
+    %define [NAME_ASM]
+    ; body of code
+%endif
